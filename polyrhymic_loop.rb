@@ -10,10 +10,8 @@ live_loop :drums do
   play_other = count % next_lap
   if (play_other == 0)
     sample :drum_splash_soft
-    next_lap = next_lap + 1
-    count = 1
-    if (next_lap > 8)
-      next_lap = 5
+    if (count == 20)
+      count = 0
     end
   end
   count = count + 1
@@ -25,3 +23,4 @@ live_loop :drums2 do
   sample :drum_snare_soft
   sleep tick
 end
+
